@@ -1,0 +1,9 @@
+{
+  "firebase": "warroom-gal-c",
+  "public": "public",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
