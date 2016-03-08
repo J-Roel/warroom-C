@@ -1,0 +1,61 @@
+<header>
+      <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <ul>
+                  <div class="col-md-4">
+                        <div class="navbar-brand"><a href="#/">{{ AC.title }}</a></div>
+                  </div>
+                  <div class="col-md-8 text-right">
+                        <div class="navbar-header navbar-right">
+                        <div class="navbar-brand"><a href="#/overview">Overview</a></div>
+                        <div class="navbar-brand">|</div>
+                        <div class="navbar-brand"><a href="#/settings">Settings</a></div>
+                        </div>
+                  </div>
+                  </ul>
+            </div>
+      </nav>
+</header>
+
+      <div class="container">
+            <h4>All Servers</h4><hr/>
+      </div>
+<div class="container">
+      <button type="button" class="btn btn-warning" ng-click="SC.startStatus();">START</button>
+      <button type="button" class="btn btn-danger" ng-click="SC.stopStatus();">STOP</button>
+      <hr/>
+
+
+
+      <div ng-repeat="data in SC.allData.data  | limitTo:3">
+
+            <a href="#/server/{{ $index }}">
+            <div class="col-md-4">
+                  <div class="server-panel">
+                        
+                        <div class="server-title">
+                              {{ data.name }} {{ data.id }}
+                        </div>
+                        
+                        <div class="server-text">
+                        <h4>Average Response Time: </h4>
+                        <h4>{{ SC.serverAverages[$index] }} </h4>
+                        </div>
+
+                        <div class="response-panel">
+                              <h4>Response Time: </h4>
+                              <h4>{{ data.responseTime }} ms</h4>
+                        </div>
+                        <h4 class="server-text">Temp: {{ data.temp }}</h4>
+            
+                  </div>
+            </div>
+            </a>
+      </div><!-- END NG-REPEAT -->
+
+</div><!-- END CONTAINER -->
+
+
+
+
+
